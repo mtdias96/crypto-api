@@ -1,0 +1,10 @@
+Fluxo de Autenticação:
+1.Cliente: Solicita login (email, senha) ao servidor.
+2.Servidor: Verifica credenciais no banco de dados.
+3.Banco de Dados: Confirma as credenciais.
+4.Servidor: Gera e envia token JWT para o cliente.
+
+Autorização na Página do Robô:
+Cliente: Envio do token JWT (Bearer Token).
+Servidor: Valida o token e verifica as permissões.
+Feedback: Retorna autorização e acesso à página do robô ao cliente.
