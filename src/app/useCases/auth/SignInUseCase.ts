@@ -9,7 +9,7 @@ interface IInput {
   password: string;
 }
 
-interface IOutput{
+interface IOutput {
   accessToken: string;
   userId: string;
   username: string;
@@ -21,28 +21,29 @@ export class SignInUseCase {
       where: { email },
     });
 
-    if(!account){
+    if (!account) {
       throw new InvalidCredentials();
     }
 
     const isPassWordValid = await compare(password, account.password)
 
-    if(!isPassWordValid){
+    if (!isPassWordValid) {
       throw new InvalidCredentials();
     }
 
     const accessToken = sign(
-      {  sub: account.id,
-        username: account.name},
+      {
+        sub: account.id,
+        username: account.name
+      },
       env.jwtSecret,
-      {expiresIn: '7d'},
+      { expiresIn: '1d' },
     );
 
     return {
       accessToken,
       userId: account.id,
       username: account.name
-      
     };
   }
 }
