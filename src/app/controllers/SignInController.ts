@@ -11,7 +11,9 @@ const schema = z.object({
 export class SignInController implements IController {
   constructor(private readonly signInUseCase: SignInUseCase) {}
 
- async handle({body}: IRequest): Promise<IResponse> {
+ async handle({body, headers}: IRequest): Promise<IResponse> {
+
+  console.log(headers);
    try{
     const { email, password} = schema.parse(body);
 
@@ -21,10 +23,12 @@ export class SignInController implements IController {
       statusCode: 200,
       body: {
         sucess: true,
-        accessToken,
-        userId,
-        username
-      }
+        data: {
+          accessToken,
+          userId,
+          username
+        }
+      },
     };
    }catch (error){
     if(error instanceof ZodError )
