@@ -7,4 +7,15 @@ Fluxo de Autenticação:
 Autorização na Página do Robô:
 Cliente: Envio do token JWT (Bearer Token).
 Servidor: Valida o token e verifica as permissões.
-Feedback: Retorna autorização e acesso à página do robô ao cliente.
+
+Extrutura pasta:
+- Server: Arquivos relacionados ao servidor;
+
+- useCases: Funcionalidades da aplicação(Regra de negocio). Funções que recebem um input e retorna um output - Single-Responsability Principle;
+
+-Errors: Erros customizados
+
+- Controller: Validaçôes e orquestração ( Chama os casos de uso e envia os dados) 
+
+
+- interfaces: Ficam os contratos do controllers
