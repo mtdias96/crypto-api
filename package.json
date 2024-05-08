@@ -20,7 +20,7 @@
   },
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "vercel-build": "yarn prisma migrate deploy"
+    "vercel-build": "npx prisma migrate deploy"
   },
   "dependencies": {
     "axios": "^1.6.8",
