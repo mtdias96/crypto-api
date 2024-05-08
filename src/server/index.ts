@@ -16,7 +16,7 @@ app.get('/test', (_, res) => {
     status: 'success',
     data: { foo: 'bar' }
   };
-  res.json(responseBody);
+  return res.json(responseBody);
 });
 
 app.listen(3001, () => {
