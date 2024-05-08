@@ -11,7 +11,7 @@ app.use(express.json())
 app.post('/signup', routeAdapter(makeSignUpController()))
 app.post('/signin', routeAdapter(makeSignInController()))
 app.get('/test', (_, res) => {
-  res.status(200).json({ message: "Pai ta onn" });
+  res.status(200).json({ message: "servidor on" });
 });
 
 app.listen(3001, () => {
